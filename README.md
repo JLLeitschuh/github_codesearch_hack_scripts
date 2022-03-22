@@ -27,5 +27,5 @@ github_cs:
 Search for Gradle Build Files that are using `http://` (instead of `https://`) for their `url` in the `repositories` block:
 
 ```shell
-python code_search.py '(" url \"http://" OR "uri(\"http://" OR " url = uri(\"http://") AND ("maven {" OR "maven()" OR "ivy {" OR "ivy()") AND (path:*.gradle OR path:*.gradle.kts)' | jq '.results[] | { repo: .repo_name, path: .path }'
+python code_search.py --all-pages '(" url \"http://" OR "uri(\"http://" OR " url = uri(\"http://") AND ("maven {" OR "maven()" OR "ivy {" OR "ivy()") AND (path:*.gradle OR path:*.gradle.kts)' | jq '.results[] | { repo: .repo_name, path: .path }'
 ```
